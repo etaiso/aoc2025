@@ -10,8 +10,12 @@ interface Solution {
 }
 
 async function run() {
-  const day = process.argv[2];
-  const part = process.argv[3];
+  const args = process.argv.slice(2);
+  const useExample = args.includes("-e") || args.includes("--example");
+  const filteredArgs = args.filter((a) => a !== "-e" && a !== "--example");
+
+  const day = filteredArgs[0];
+  const part = filteredArgs[1];
 
   if (!day) {
     console.log("\n🎄 Advent of Code 2025 🎄\n");
@@ -19,17 +23,21 @@ async function run() {
     console.log("  npm run solve <day>        Run both parts for a day");
     console.log("  npm run solve <day> 1      Run only part 1");
     console.log("  npm run solve <day> 2      Run only part 2");
+    console.log("  npm run example <day>      Run with example.txt");
     console.log("  npm run new <day>          Create new day from template");
-    console.log("\nExample:");
+    console.log("\nExamples:");
     console.log("  npm run solve 1");
     console.log("  npm run solve 1 2");
+    console.log("  npm run example 1          # test with example input");
+    console.log("  npm run example 1 1        # part 1 with example input");
     process.exit(0);
   }
 
   const dayNum = day.padStart(2, "0");
   const dayDir = join(__dirname, "days", `day${dayNum}`);
   const solutionPath = join(dayDir, "solution.ts");
-  const inputPath = join(dayDir, "input.txt");
+  const inputFile = useExample ? "example.txt" : "input.txt";
+  const inputPath = join(dayDir, inputFile);
 
   if (!existsSync(solutionPath)) {
     console.error(`❌ Day ${day} solution not found at ${solutionPath}`);
@@ -38,15 +46,20 @@ async function run() {
   }
 
   if (!existsSync(inputPath)) {
-    console.error(`❌ Input file not found at ${inputPath}`);
-    console.log(`\n💡 Add your puzzle input to: ${inputPath}`);
+    console.error(`❌ ${inputFile} not found at ${inputPath}`);
+    if (useExample) {
+      console.log(`\n💡 Add example input to: ${inputPath}`);
+    } else {
+      console.log(`\n💡 Add your puzzle input to: ${inputPath}`);
+    }
     process.exit(1);
   }
 
   const input = readFileSync(inputPath, "utf-8").trimEnd();
   const solution: Solution = await import(solutionPath);
 
-  console.log(`\n🎄 Day ${day} 🎄\n`);
+  const modeLabel = useExample ? " (example)" : "";
+  console.log(`\n🎄 Day ${day}${modeLabel} 🎄\n`);
 
   const runPart = (partNum: 1 | 2) => {
     const fn = partNum === 1 ? solution.part1 : solution.part2;

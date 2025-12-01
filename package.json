@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "solve": "tsx src/runner.ts",
+    "example": "tsx src/runner.ts -e",
     "new": "tsx src/scaffold.ts",
     "watch": "tsx watch src/runner.ts"
   },
