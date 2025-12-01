@@ -1,0 +1,85 @@
+# Advent of Code 2025 - Cursor Rules
+
+This is a TypeScript Advent of Code project. When writing solutions, follow these guidelines.
+
+## Project Structure
+
+- Solutions go in `src/days/dayXX/solution.ts`
+- Each solution exports `part1(input: string)` and `part2(input: string)`
+- Puzzle input is in `input.txt`, example input in `example.txt`
+- Shared utilities are in `src/utils/index.ts`
+
+## IMPORTANT: Use Existing Utilities
+
+Before implementing any helper function, **always check and use the existing utilities** from `src/utils/index.ts`.
+
+Import them in solutions like this:
+
+```typescript
+import { lines, nums, sum, grid } from '../../utils';
+```
+
+### Available Utilities
+
+**Parsing:**
+
+- `lines(input)` - Split input into array of lines
+- `nums(input)` - Extract all numbers (including negative) from input
+- `grid(input)` - Parse input into 2D character array
+- `numGrid(input)` - Parse input into 2D number array
+
+**Math:**
+
+- `sum(arr)` - Sum of numbers
+- `product(arr)` - Product of numbers
+- `min(arr)` - Minimum value
+- `max(arr)` - Maximum value
+- `gcd(a, b)` - Greatest common divisor
+- `lcm(a, b)` - Least common multiple
+- `lcmAll(arr)` - LCM of array of numbers
+
+**Helpers:**
+
+- `count(arr, predicate)` - Count elements matching predicate
+- `range(start, end)` - Generate array [start, start+1, ..., end-1]
+- `manhattan([x1,y1], [x2,y2])` - Manhattan distance
+
+**Grid Navigation:**
+
+- `neighbors4(x, y)` - Get 4 adjacent coordinates (up, down, left, right)
+- `neighbors8(x, y)` - Get 8 adjacent coordinates (including diagonals)
+- `transpose(grid)` - Transpose a 2D array
+
+**Other:**
+
+- `clone(obj)` - Deep clone an object
+- `memo(fn)` - Memoize a function for caching results
+
+## Code Style
+
+- Use TypeScript with strict types
+- Prefer functional style with map/filter/reduce
+- Use destructuring and spread operators
+- Keep solutions concise and readable
+- Add comments for complex logic
+
+## DO NOT
+
+- Re-implement utilities that already exist in `src/utils/index.ts`
+- Write `input.split("\n")` when `lines(input)` exists
+- Write `arr.reduce((a,b) => a+b, 0)` when `sum(arr)` exists
+- Write custom GCD/LCM implementations
+- Write custom neighbor-finding logic for grids
+
+## If a Utility is Missing
+
+If you need a utility that doesn't exist, add it to `src/utils/index.ts` rather than writing it inline in the solution. This makes it reusable for future days.
+
+## Running Solutions
+
+```bash
+npm run solve <day>      # Run both parts
+npm run solve <day> 1    # Run part 1 only
+npm run solve <day> 2    # Run part 2 only
+npm run new <day>        # Create new day from template
+```

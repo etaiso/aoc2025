@@ -4,7 +4,7 @@
 export function part1(input: string): number {
   const lines = input.split("\n");
   
-  // TODO: Implement part 1
+  console.log('res', lines);
   return 0;
 }
 
