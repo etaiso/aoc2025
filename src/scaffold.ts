@@ -54,3 +54,4 @@ console.log(`  1. Paste your input into input.txt`);
 console.log(`  2. Implement part1() and part2()`);
 console.log(`  3. Run: npm run solve ${day}\n`);
 
+

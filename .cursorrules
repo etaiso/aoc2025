@@ -83,3 +83,4 @@ npm run solve <day> 1    # Run part 1 only
 npm run solve <day> 2    # Run part 2 only
 npm run new <day>        # Create new day from template
 ```
+

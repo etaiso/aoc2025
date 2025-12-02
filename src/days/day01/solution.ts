@@ -4,13 +4,13 @@
 export function part1(input: string): number {
   const lines = input.split("\n");
   
-  console.log('res', lines);
+  console.log('res', lines.length);
   return 0;
 }
 
 export function part2(input: string): number {
   const lines = input.split("\n");
   
-  // TODO: Implement part 2
+  // TODO: 
   return 0;
 }
