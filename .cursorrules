@@ -84,3 +84,13 @@ npm run solve <day> 2    # Run part 2 only
 npm run new <day>        # Create new day from template
 ```
 
+## Plan Files
+
+When creating plan files (`.plan.md`), use **meaningful descriptive names** that reflect the content or purpose of the plan. Examples:
+
+- ✅ `day-02-part1-red-nosed-reports.plan.md`
+- ✅ `day-05-part2-graph-traversal-approach.plan.md`
+- ❌ `day-02-part1-59163130.plan.md` (random IDs are not descriptive)
+- ❌ `day-02-red-nosed-reports.plan.md` (part number is not included)
+
+Plan files are stored in `.cursor/plans/` or in the relevant day's `plans/` subdirectory.

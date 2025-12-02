@@ -140,7 +140,7 @@ npm run progress        # Show current progress
 | Day | Part 1 | Part 2 |
 | --- | ------ | ------ |
 | 01  | ⭐     | ⭐     |
-| 02  | ⬜     | ⬜     |
+| 02  | ⭐     | ⭐     |
 | 03  | ⬜     | ⬜     |
 | 04  | ⬜     | ⬜     |
 | 05  | ⬜     | ⬜     |

@@ -2,5 +2,9 @@
   "01": {
     "part1": true,
     "part2": true
+  },
+  "02": {
+    "part1": true,
+    "part2": true
   }
 }
