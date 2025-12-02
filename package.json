@@ -7,7 +7,9 @@
     "solve": "tsx src/runner.ts",
     "example": "tsx src/runner.ts -e",
     "new": "tsx src/scaffold.ts",
-    "watch": "tsx watch src/runner.ts"
+    "watch": "tsx watch src/runner.ts",
+    "test": "tsx src/test-runner.ts",
+    "test:all": "tsx src/test-runner.ts --all"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

@@ -39,15 +39,26 @@ export function part2(input: string): number {
 }
 `;
 
+const testsTemplate = `import type { TestCase } from '../../types';
+
+export const tests: TestCase[] = [
+  // Add your test cases here
+  // { part: 1, input: ['line1', 'line2'], expected: 42 },
+  // { name: 'named test', part: 2, input: ['input'], expected: 100 },
+];
+`;
+
 writeFileSync(join(dayDir, "solution.ts"), solutionTemplate);
 writeFileSync(join(dayDir, "input.txt"), "");
 writeFileSync(join(dayDir, "example.txt"), "");
+writeFileSync(join(dayDir, "tests.ts"), testsTemplate);
 
 console.log(`\n🎄 Created Day ${day} 🎄\n`);
 console.log(`📁 ${dayDir}/`);
 console.log(`   ├── solution.ts   (your solution)`);
 console.log(`   ├── input.txt     (paste your puzzle input)`);
-console.log(`   └── example.txt   (test with example input)\n`);
+console.log(`   ├── example.txt   (test with example input)`);
+console.log(`   └── tests.ts      (add test cases)\n`);
 console.log(`🔗 Puzzle: https://adventofcode.com/2025/day/${day}\n`);
 console.log(`Next steps:`);
 console.log(`  1. Paste your input into input.txt`);
