@@ -26,6 +26,8 @@ src/days/day01/
 └── tests.ts      # Add test cases here
 ```
 
+The generated `tests.ts` includes default test cases pointing to `example.txt` with `"{{EXPECTED_RESULT}}"` placeholders. Replace these with the expected values from the puzzle page.
+
 ### Run a solution
 
 ```bash
@@ -127,7 +129,7 @@ src/
 
 | Day | Part 1 | Part 2 |
 | --- | ------ | ------ |
-| 01  | ⬜     | ⬜     |
+| 01  | ⭐     | ⬜     |
 | 02  | ⬜     | ⬜     |
 | 03  | ⬜     | ⬜     |
 | 04  | ⬜     | ⬜     |

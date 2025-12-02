@@ -40,11 +40,19 @@ export function part2(input: string): number {
 `;
 
 const testsTemplate = `import type { TestCase } from '../../types';
+import { readFileSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const example = readFileSync(join(__dirname, 'example.txt'), 'utf-8');
 
 export const tests: TestCase[] = [
-  // Add your test cases here
-  // { part: 1, input: ['line1', 'line2'], expected: 42 },
-  // { name: 'named test', part: 2, input: ['input'], expected: 100 },
+  // Part 1 tests
+  { name: 'example.txt', part: 1, input: example, expected: "{{EXPECTED_RESULT}}" },
+
+  // Part 2 tests
+  { name: 'example.txt', part: 2, input: example, expected: "{{EXPECTED_RESULT}}" },
 ];
 `;
 
