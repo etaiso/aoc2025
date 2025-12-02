@@ -18,7 +18,17 @@ export const tests: TestCase[] = [
   { name: 'near miss (R49 → 99, not 0)', part: 1, input: ['R49'], expected: 0 },
   { name: 'near miss (L49 → 1, not 0)', part: 1, input: ['L49'], expected: 0 },
 
-  // Part 2 placeholder (TODO: update when part 2 is implemented)
-  { name: 'part 2 placeholder', part: 2, input: ['R50'], expected: 0 },
+  // Part 2 tests
+  { name: 'example.txt', part: 2, input: example, expected: 6 },
+  { name: 'R50 lands on zero', part: 2, input: ['R50'], expected: 1 },
+  { name: 'L50 lands on zero', part: 2, input: ['L50'], expected: 1 },
+  { name: 'R60 passes through zero once', part: 2, input: ['R60'], expected: 1 },
+  { name: 'L60 passes through zero once', part: 2, input: ['L60'], expected: 1 },
+  { name: 'R100 full rotation passes zero once', part: 2, input: ['R100'], expected: 1 },
+  { name: 'R150 passes zero twice (wrap + land)', part: 2, input: ['R150'], expected: 2 },
+  { name: 'L150 passes zero twice (wrap + land)', part: 2, input: ['L150'], expected: 2 },
+  { name: 'no movement (R0)', part: 2, input: ['R0'], expected: 0 },
+  { name: 'near miss (R49 → 99)', part: 2, input: ['R49'], expected: 0 },
+  { name: 'near miss (L49 → 1)', part: 2, input: ['L49'], expected: 0 },
 ];
 

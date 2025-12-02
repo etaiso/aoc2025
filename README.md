@@ -125,11 +125,21 @@ src/
     └── ...
 ```
 
+## Progress Tracking
+
+```bash
+npm run star 1          # Mark both parts of day 1 as solved
+npm run star 1 1        # Mark day 1 part 1 as solved
+npm run star 1 2        # Mark day 1 part 2 as solved
+npm run unstar 3 1      # Mark day 3 part 1 as unsolved
+npm run progress        # Show current progress
+```
+
 ## Progress
 
 | Day | Part 1 | Part 2 |
 | --- | ------ | ------ |
-| 01  | ⭐     | ⬜     |
+| 01  | ⭐     | ⭐     |
 | 02  | ⬜     | ⬜     |
 | 03  | ⬜     | ⬜     |
 | 04  | ⬜     | ⬜     |

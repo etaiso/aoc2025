@@ -9,7 +9,10 @@
     "new": "tsx src/scaffold.ts",
     "watch": "tsx watch src/runner.ts",
     "test": "tsx src/test-runner.ts",
-    "test:all": "tsx src/test-runner.ts --all"
+    "test:all": "tsx src/test-runner.ts --all",
+    "star": "tsx src/progress.ts star",
+    "unstar": "tsx src/progress.ts unstar",
+    "progress": "tsx src/progress.ts"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

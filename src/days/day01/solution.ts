@@ -25,6 +25,23 @@ export function part1(input: string): number {
 }
 
 export function part2(input: string): number {
-  // TODO: Implement part 2
-  return 0;
+  const countZeroPasses = (start: number, delta: number): number => {
+    if (delta >= 0) {
+      return Math.floor((start + delta) / RANGE);
+    }
+    const absDelta = Math.abs(delta);
+    if (start === 0) return Math.floor(absDelta / RANGE);
+    return absDelta >= start ? 1 + Math.floor((absDelta - start) / RANGE) : 0;
+  };
+
+  const { count } = lines(input).reduce(
+    ({ value, count }, line) => {
+      const delta = parse(line);
+      const passes = countZeroPasses(value, delta);
+      const next = wrap(value + delta);
+      return { value: next, count: count + passes };
+    },
+    { value: START, count: 0 }
+  );
+  return count;
 }
