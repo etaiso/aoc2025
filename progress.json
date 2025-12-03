@@ -6,5 +6,9 @@
   "02": {
     "part1": true,
     "part2": true
+  },
+  "03": {
+    "part1": true,
+    "part2": true
   }
 }
