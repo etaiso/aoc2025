@@ -148,8 +148,8 @@ npm run progress        # Show current progress
 | 07  | ⭐     | ⭐     |
 | 08  | ⭐     | ⭐     |
 | 09  | ⭐     | ⭐     |
-| 10  | ⬜     | ⬜     |
-| 11  | ⬜     | ⬜     |
+| 10  | ⭐     | ⭐     |
+| 11  | ⭐     | ⭐     |
 | 12  | ⬜     | ⬜     |
 
 ⭐ = Solved | ⬜ = Not yet solved
